@@ -1,4 +1,5 @@
 from turtle import *
+from interface_paint import *
 
 
 t = Turtle()
@@ -9,6 +10,26 @@ t.pendown()
 t.speed(0)
 scr = t.getscreen()
 
+def setWidth_1():
+    t.width(5)
+
+def setWidth_2():
+    t.width(10)
+
+def setWidth_3():
+    t.width(15)
+
+def setWidth_4():
+    t.width(20)
+
+def setWidth_5():
+    t.width(25)
+
+def black_color():
+    scr.bgcolor('black')
+def white_color():
+    scr.bgcolor('white')
+
 
 def c_clear():
     t.clear()
@@ -18,6 +39,7 @@ def move(x, y):
     t.penup()
     t.goto(x, y)
     t.pendown()
+
 
 def stepright():
     t.goto(t.xcor() + 5, t.ycor())
@@ -67,6 +89,15 @@ scr.onkey(stepdown,'down')
 scr.onkey(beginFill, 'q')
 scr.onkey(endFill, 'e')
 scr.onkey(c_clear, 'c')
+
+scr.onkey(setWidth_1, '1')
+scr.onkey(setWidth_2, '2')
+scr.onkey(setWidth_3, '3')
+scr.onkey(setWidth_4, '4')
+scr.onkey(setWidth_5, '5')
+
+scr.onkey(black_color, 'n')
+scr.onkey(white_color, 'd')
 
 
 scr.onscreenclick(move)
